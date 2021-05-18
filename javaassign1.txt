@@ -1,0 +1,212 @@
+
+1)    
+    COMPILER
+   ================                                                                        INTERPRETER
+                                                                                        =================
+
+It takes an entire program at a time.                                          It takes a single line of code or instruction at a time.
+
+It generates intermediate object code.                                         It does not produce any intermediate object code.
+
+The compilation is done before execution.	                               Compilation and execution take place simultaneously.
+
+
+Comparatively faster	                                                       SlowerMemory
+
+Memory requirement is more due to the creation of object code.	               It requires less memory as it does not create intermediate object code.
+
+Display all errors after compilation, all at the same time.	               Displays error of each line one by one.
+
+Error detection	Difficult	                                               Easier comparatively Pertaining Programming languages
+
+C, C++, C#, Scala, typescript uses compiler.	                               PHP, Perl, Python, Ruby uses an interpreter.
+
+
+2)Data types are divided into two groups:
+  =======================================
+Primitive data types - includes byte, short, int, long, float, double, boolean and char
+
+Non-primitive data types - such as String, Arrays and Classes (you will learn more about these in a later chapter)
+
+Primitive Data Types:-
+====================
+A primitive data type specifies the size and type of variable values, and it has no additional methods.
+
+There are eight primitive data types in Java:
+
+Data Type	Size	Description
+byte	1 byte	Stores whole numbers from -128 to 127
+short	2 bytes	Stores whole numbers from -32,768 to 32,767
+int	4 bytes	Stores whole numbers from -2,147,483,648 to 2,147,483,647
+long	8 bytes	Stores whole numbers from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+float	4 bytes	Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits
+double	8 bytes	Stores fractional numbers. Sufficient for storing 15 decimal digits
+boolean	1 bit	Stores true or false values
+char	2 bytes	Stores a single character/letter or ASCII values
+
+
+3)Run Time Stack Overflow
+==========================
+>> A stack overflow is a runtime error that happens when a program runs out of memory in the call stack. 
+>> The stack overflow generally signals a problem in resource provisioning and has to be fixed in order to allow the program to run and use memory properly.
+>> It is important to point out that a stack overflow is a logical runtime error and not a syntax error. 
+>> Syntax errors result when the computer cannot read a section of code correctly, and these errors are caught by the compiler or at other key points before production.
+>> A stack overflow, on the other hand, happens “in the mix” and can be hard to figure out.
+>> Stack overflows can be caused by not allocating enough memory to a particular program. 
+>> They can also be caused by a codebase where the coder or developer did not remember memory limits and programmed the executable to exceed them.
+>> Many programmers consider recursive functions as a major culprit: With recursion, the iterative process eats up all of the available memory and 
+   then triggers a stack overflow.
+
+4)package Virtusa;
+
+public class Demo {
+
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+		
+int a=1;
+float b=1.1f;
+boolean c=true;
+String g="Pallavi";
+double d=3.44;
+long e = 12000000000000000L;
+char f='P';
+System.out.println(a);
+System.out.println(b);
+System.out.println(c);
+System.out.println(d);
+System.out.println(g);
+System.out.println(e);
+System.out.println(f);
+}
+}
+5)package Virtusa;
+
+public class Loops 
+{
+public static void main(String[] args)
+{
+int n =8;
+if(n%2==0)
+{
+	System.out.println("Even Number");
+}
+else 
+{
+	System.out.println("Odd number");
+}
+	
+	for(int i=1;i<=10;i++)
+	{
+		System.out.println(i);
+	}
+	
+	int i=10;
+	while(i>=1)
+	{
+		System.out.println(i);
+		i--;
+	}
+		
+	int i=0,N=10;
+	do
+	{
+		System.out.println(i);
+		i++;
+		
+	}while(i<N);
+	int n=4;
+	switch(n)
+	{
+	case 1:System.out.println("abc");
+	       break;
+	case 2:System.out.println("efg");
+	       break;
+	case 3:System.out.println("pqr");
+             break;
+	case 4:System.out.println("lmn");
+  	       break;
+	
+	}
+	
+	}
+}
+
+
+6)
+package Virtusa;
+
+public class Book
+{
+	int BookPages ;
+	String BookName;
+	String BookAuthor;
+	double BookPrice;
+	
+public Book(int BookPages,String BookName,String BookAuthor,double BookPrice)
+{
+	this.BookPages=BookPages;
+	this.BookName=BookName;
+	this.BookAuthor=BookAuthor;
+	this.BookPrice=BookPrice;
+}	
+
+		public void turnPages()
+		{
+
+		System.out.println("No.of pages :"+BookPages);
+		}
+		public void bookPrice()
+		{
+		System.out.println("Book price :"+BookPrice);	
+		}
+	
+
+public static void main(String[] args)
+{
+	
+	Book b1= new Book(120,"Plla","addddf",67.8);
+	b1.turnPages();
+	b1.bookPrice();
+}
+}
+
+
+7)package Virtusa;
+
+public class Car 
+{
+ String Brand;
+int Price;
+String Color;
+String name;
+
+public Car()
+{
+
+}
+public Car(String name)
+{
+	this.name=name;
+}
+
+
+public Car(String Brand,int Price,String Color)
+{
+    this.Brand= Brand;
+	this.Price=Price;
+	this.Color=Color;
+}
+
+public static void main(String[] args)
+{
+	Car c1= new Car("abs");
+	System.out.println("name is :"+c1.name);
+	Car c2 = new Car("sdz",90876,"yugyjn");
+	System.out.println("brand is : "+c2.Brand+"Price is : "+c2.Price+"color is : "+c2.Color);
+}
+}
+
+
+
