@@ -1,0 +1,222 @@
+1)SINGLE LEVEL INHERITANCE
+========================
+package Inheritance;
+
+public class Bike 
+{
+int speed=100;
+String color="white";
+String Brand="abc";
+
+public void ride()
+{
+System.out.println("Ride with speed of 80");	
+}
+}
+public class KTM extends Bike
+{
+	public void ride()
+	{
+		System.out.println("Ride with speed of 90");
+	}
+
+}
+public class MainClass
+{
+public static void main(String[] args)
+{
+KTM k = new KTM();
+k.ride();
+Bike b = new Bike();
+b.ride();
+
+System.out.println("color is "+k.color+" brand is"+k.Brand);
+	
+}
+}
+
+MULTI LEVEL INHERITANCE
+=======================
+package Inheritance;
+
+public class Bank 
+{
+	String name="charan";
+	int accnum=1235456;
+	
+	public void minbal()
+	{
+		System.out.println("Minimum balance is 500");
+	}
+}
+public class Deposit extends Bank
+{
+public void transaction()
+{
+System.out.println("Transact the amount from bank");	
+}
+}
+public class Withdrawl extends Deposit
+{
+public void amtWith()
+{
+System.out.println("Withdraw the amount 1000");	
+}
+}
+public class MainClass2 
+{
+public static void main(String[] args) 
+{
+Withdrawl w1 = new Withdrawl();
+w1.minbal();
+w1.transaction();
+w1.amtWith();
+	
+}
+}
+
+HIERARCHIAL LEVEL INHERITANCE
+=============================
+public class Bird 
+{
+String color="Black";
+
+public void eat()
+{
+System.out.println("Birds eat grains");	
+}
+}
+public class Parrot extends Bird
+{
+String color="Green";
+public void fly()
+{
+System.out.println("Flies higher");	
+}
+}
+public class Pegion extends Bird
+{
+String color="White";
+public void makeSound()
+{
+System.out.println("chuk chukk chukk");	
+}
+
+}
+public class MainClass1 
+{
+public static void main(String[] args) 
+{
+Pegion p1 = new Pegion();
+p1.makeSound();
+p1.eat();
+Parrot p2 = new Parrot();
+p2.fly();
+p2.eat();
+System.out.println("Pegion Color is"+p1.color);
+
+System.out.println("Parrot color is"+p2.color);
+}
+}
+MULTIPLE INHERITANCE
+====================
+public class SBI 
+{
+	int age=22;
+	String name="charan";
+public void details()
+{
+System.out.println("details of bank accountant");	
+}
+}
+public class ICICI 
+{
+public void perDetails()
+{
+	System.out.println("ICICI details of accountant");
+	}
+}
+
+public class Person extends SBI,ICICI
+{
+	public void details()
+	{
+		System.out.println("Bank Accountant detils");
+	}
+
+	public static void main(String[] args) 
+	{
+		Person p1 = new Person();
+		p1.details();
+	}
+}
+
+2)parent class
+==============
+package Inheritance;
+
+public class Father 
+{	
+		int money=100000;
+		protected int age=22;
+		public int getAge() 
+		{
+			return age;
+		}
+		public void setAge(int age)
+		{
+			this.age = age;
+		}
+		private String name="charn"; // restricted
+
+		public String getName() 
+		{
+			return name;
+		}
+		public void setName(String name)
+		{
+			this.name = name;
+		}
+		void isDrink() {
+			System.out.println("drinking is good habit");
+		}
+			public static void main(String[] args)
+			{
+
+			}
+
+		
+}
+child class
+===========
+package Inheritance;
+
+public class Son extends Father
+{
+	protected int ht=6;
+
+	public int getHt() {
+		return ht;
+	}
+	public void setHt(int ht) {
+		this.ht = ht;
+	}
+	public void longDrive() {
+		System.out.println("Name is"+name);
+	}
+		public static void main(String[] args) {
+	Son s1=new Son();
+	s1.money=20000;
+	System.out.println(s1.money);
+	s1.isDrink();
+	s1.name="sai";
+	s1.longDrive();
+	int w1=s1.getAge();
+	System.out.println("my age is"+w1);
+	String s11=s1.getName();
+	System.out.println("my name is "+s11);
+
+		}
+
+	}
+
