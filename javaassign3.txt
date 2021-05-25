@@ -1,0 +1,113 @@
+CRUD OPERATIONS:
+=================
+package org.app.jsp1;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class Insertpgm1
+{
+public static void main(String[] args)
+{
+	String URL ="jdbc:MySql://localhost:3306/virtusa";
+	String Username="root";
+	String Password="Pallavi@26";
+	String query="INSERT INTO EMPLOYEE(empId,empname,jobname,salary,age)VALUES(?,?,?,?,?)";
+	try	
+	{
+	Connection connection = DriverManager.getConnection(URL,Username,Password);
+	System.out.println("Step1");
+	System.out.println("yaaa i got connection");
+	PreparedStatement ps=connection.prepareStatement(query);
+	System.out.println("Step-2");
+	for(int i=1;i<=2;i++)
+	{
+	Scanner scan = new Scanner(System.in);
+	System.out.println("Enter empId");
+	int a1 =scan.nextInt();
+	System.out.println("Enter empname");
+	String a2 =scan.next();
+	System.out.println("Enter jobname");
+	String a3 =scan.next();
+	System.out.println("Enter salary");
+	int a4 =scan.nextInt();
+	System.out.println("Enter age");
+	String a5 =scan.next();
+    ps.setInt(1,a1);
+    ps.setString(2, a2);
+    ps.setString(3, a3);
+    ps.setLong(4, a4);
+    ps.setString(5, a5);
+	
+    int rowsUpdated = ps.executeUpdate();
+	
+    if(rowsUpdated>0)
+    {
+    	System.out.println("an existing user was updated");
+    }
+	}
+	connection.close();
+	System.out.println("Step5");
+	
+	}	
+catch(SQLException e)
+{
+e.printStackTrace();	
+}	
+}
+}
+
+package org.app.jsp1;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class Updatepgm1
+{
+public static void main(String[] args) 
+{
+	String URL ="jdbc:MySql://localhost:3306/virtusa";
+	String Username="root";
+	String Password="Pallavi@26";
+	
+	try	
+	{
+	Connection connection = DriverManager.getConnection(URL,Username,Password);
+	System.out.println("Step1");
+	
+	System.out.println("yaaa i got connection");
+	String query="update  employee SET jobname=? where age>?";
+    PreparedStatement ps=connection.prepareStatement(query);
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter the job");
+    String a1 = scan.next();
+    System.out.println("Enter the age");
+    int a2=scan.nextInt();
+    
+    ps.setString(1,a1);
+    ps.setLong(2, a2);
+	
+    int rowsUpdated = ps.executeUpdate();
+    if(rowsUpdated>0)
+    {
+    	System.out.println("an existing user was updated");
+    }
+	connection.close();
+	System.out.println("Step5");
+	
+	}
+	catch(SQLException e)
+	{
+	e.printStackTrace();	
+	}	
+}
+
+
+	
+}
